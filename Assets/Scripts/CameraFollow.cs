@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
+        target = VehicleManager.Instance.PickBestAgent().transform;
         if (target == null) return; // Garante que há um alvo definido
 
         // Posição desejada com o offset

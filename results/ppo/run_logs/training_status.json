@@ -2,31 +2,58 @@
     "F1FullEditionPlusT1": {
         "checkpoints": [
             {
-                "steps": 499955,
-                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-499955.onnx",
-                "reward": 2.2572470778680365,
-                "creation_time": 1732112363.465587,
+                "steps": 9999977,
+                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-9999977.onnx",
+                "reward": null,
+                "creation_time": 1732125992.667771,
                 "auxillary_file_paths": [
-                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-499955.pt"
+                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-9999977.pt"
                 ]
             },
             {
-                "steps": 898145,
-                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-898145.onnx",
-                "reward": null,
-                "creation_time": 1732112774.5296996,
+                "steps": 10499992,
+                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-10499992.onnx",
+                "reward": -373.95269298553467,
+                "creation_time": 1732126478.9724705,
                 "auxillary_file_paths": [
-                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-898145.pt"
+                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-10499992.pt"
+                ]
+            },
+            {
+                "steps": 10999952,
+                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-10999952.onnx",
+                "reward": 16507.87956094742,
+                "creation_time": 1732126963.087422,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-10999952.pt"
+                ]
+            },
+            {
+                "steps": 11499967,
+                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-11499967.onnx",
+                "reward": null,
+                "creation_time": 1732127456.6177335,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-11499967.pt"
+                ]
+            },
+            {
+                "steps": 11630359,
+                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-11630359.onnx",
+                "reward": 8180.920623805374,
+                "creation_time": 1732127661.8235424,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-11630359.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 898145,
+            "steps": 11630359,
             "file_path": "results\\ppo\\F1FullEditionPlusT1.onnx",
-            "reward": null,
-            "creation_time": 1732112774.5296996,
+            "reward": 8180.920623805374,
+            "creation_time": 1732127661.8235424,
             "auxillary_file_paths": [
-                "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-898145.pt"
+                "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-11630359.pt"
             ]
         }
     },
