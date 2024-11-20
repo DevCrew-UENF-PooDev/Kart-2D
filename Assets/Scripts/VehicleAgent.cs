@@ -18,9 +18,11 @@ public class VehicleAgent : Agent
     private Vector3 lastPosition;
     private float idlePenaltyTimer = 0f;
     private float timerAlive = 0f;
+    private float timeSinceLastCheckpoint = 0f;
 
+    [SerializeField] private float checkpointTimeLimit = 2f;
     [SerializeField] private float timerAliveWeight = 0.005f, idlePenaltyTimerWeight = -0.01f,
-        wallCollisiontWeight = -6f, checkpointAchieveWeight = 3f, alignmentRewardWeight = 0.01f;
+        wallCollisiontWeight = -6f, checkpointAchieveWeight = 3f, alignmentRewardWeight = 0.01f, checkpointPenaltyWeight = -5f;
 
     private void Start() 
     {
@@ -44,6 +46,7 @@ public class VehicleAgent : Agent
             {
                 AddReward(checkpointAchieveWeight);
                 nextCheckpointIndex = (nextCheckpointIndex + 1) % checkpoints.Count;
+                timeSinceLastCheckpoint = 0f; // Reseta o contador ao atingir o checkpoint.
             }
             else
             {
@@ -84,6 +87,7 @@ public class VehicleAgent : Agent
         nextCheckpointIndex = 0;
         idlePenaltyTimer = 0f;
         timerAlive = 0f;
+        timeSinceLastCheckpoint = 0f;
         (float xMin, float xMax) = VehicleManager.Instance.XRange;
         (float yMin, float yMax) = VehicleManager.Instance.YRange;
         transform.localPosition = new(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
@@ -138,6 +142,18 @@ public class VehicleAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
+        timeSinceLastCheckpoint += Time.deltaTime;
+        timerAlive += Time.deltaTime;
+        if(timerAlive >= 1f)
+        {
+            timerAlive = 0;
+            AddReward(timerAliveWeight);
+        }
+        if (timeSinceLastCheckpoint > checkpointTimeLimit)
+        {
+            AddReward(checkpointPenaltyWeight); // Penalidade por demorar muito.
+            timeSinceLastCheckpoint = 0f; // Reseta o contador para evitar penalizar repetidamente.
+        }
         // Penalidade por ficar parado
         float distanceMoved = Vector3.Distance(transform.position, lastPosition);
         if (distanceMoved < 0.01f) // Limite para detectar movimento
@@ -164,18 +180,4 @@ public class VehicleAgent : Agent
         actionsOut.ContinuousActions.Array[0] = Input.GetAxis("Vertical");
         actionsOut.ContinuousActions.Array[1] = Input.GetAxis("Horizontal");
     }
-
-    /// <summary>
-    /// Chamado a cada frame do jogo
-    /// </summary>
-    private void Update()
-    {
-        timerAlive += Time.deltaTime;
-        if(timerAlive >= 1f)
-        {
-            timerAlive = 0;
-            AddReward(timerAliveWeight);
-        }
-    }
-    
 }
