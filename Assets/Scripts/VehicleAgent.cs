@@ -20,9 +20,9 @@ public class VehicleAgent : Agent
     private float timerAlive = 0f;
     private float timeSinceLastCheckpoint = 0f;
 
-    [SerializeField] private float checkpointTimeLimit = 2f;
+    [SerializeField] private float checkpointTimeLimit = 2f, safeDistanceFromWall = 1f;
     [SerializeField] private float timerAliveWeight = 0.005f, idlePenaltyTimerWeight = -0.01f,
-        wallCollisiontWeight = -6f, checkpointAchieveWeight = 3f, alignmentRewardWeight = 0.01f, checkpointPenaltyWeight = -5f;
+        wallCollisiontWeight = -6f, checkpointAchieveWeight = 3f, alignmentRewardWeight = 0.01f, checkpointPenaltyWeight = -5f, wallDistancePenalty = 0.1f;
 
     private void Start() 
     {
@@ -124,9 +124,18 @@ public class VehicleAgent : Agent
 
         foreach (var direction in directions)
         {
-            RaycastHit2D hit = Physics2D.Raycast(raycastPoint.position, direction, rayDistance, hitMask);   
+            RaycastHit2D hit = Physics2D.Raycast(raycastPoint.position, direction, rayDistance, hitMask);
+            // Debug.Log(direction.ToString() + " | " + hit.distance);
             float normalizedDistance = hit.collider ? Mathf.Clamp01(hit.distance / rayDistance) : 1f;
             sensor.AddObservation(normalizedDistance); // Observa distância normalizada
+
+            // Penalidade por proximidade excessiva
+            if (hit.collider && hit.distance < safeDistanceFromWall)
+            {
+                float proximityPenalty = (safeDistanceFromWall - hit.distance) * 0.1f; // Penalidade proporcional.
+                AddReward(-proximityPenalty);
+            }
+
             Debug.DrawRay(raycastPoint.position, direction * (hit.collider ? hit.distance : rayDistance), hit.collider ? Color.red : Color.green);
         }
 

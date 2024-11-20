@@ -2,31 +2,31 @@
     "F1FullEditionPlusT1": {
         "checkpoints": [
             {
-                "steps": 499949,
-                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-499949.onnx",
-                "reward": 42.37112621828228,
-                "creation_time": 1732111305.189726,
+                "steps": 499955,
+                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-499955.onnx",
+                "reward": 2.2572470778680365,
+                "creation_time": 1732112363.465587,
                 "auxillary_file_paths": [
-                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-499949.pt"
+                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-499955.pt"
                 ]
             },
             {
-                "steps": 719028,
-                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-719028.onnx",
+                "steps": 898145,
+                "file_path": "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-898145.onnx",
                 "reward": null,
-                "creation_time": 1732111543.8620672,
+                "creation_time": 1732112774.5296996,
                 "auxillary_file_paths": [
-                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-719028.pt"
+                    "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-898145.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 719028,
+            "steps": 898145,
             "file_path": "results\\ppo\\F1FullEditionPlusT1.onnx",
             "reward": null,
-            "creation_time": 1732111543.8620672,
+            "creation_time": 1732112774.5296996,
             "auxillary_file_paths": [
-                "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-719028.pt"
+                "results\\ppo\\F1FullEditionPlusT1\\F1FullEditionPlusT1-898145.pt"
             ]
         }
     },
