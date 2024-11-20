@@ -4,6 +4,7 @@ public class VehicleController : MonoBehaviour
 {
     // Configurações Gerais
     [Header("Configurações Gerais")]
+    // [SerializeField] private bool enableUserInteraction = false;
     public float maxSpeed = 10f; // Velocidade máxima
     public float acceleration = 5f; // Força de aceleração
     public float brakingForce = 10f; // Força de frenagem
@@ -21,6 +22,7 @@ public class VehicleController : MonoBehaviour
     public bool isTank = false;
 
     private Rigidbody2D rb;
+    [SerializeField] private float verticalInput, horizontalInput;
 
     void Start()
     {
@@ -40,8 +42,7 @@ public class VehicleController : MonoBehaviour
 
     void HandleMovement()
     {
-        // Entrada do jogador (Vertical para aceleração/frenagem)
-        float verticalInput = Input.GetAxis("Vertical");
+        // float verticalInput = Input.GetAxis("Vertical");
 
         // Aceleração
         if (verticalInput > 0)
@@ -63,8 +64,7 @@ public class VehicleController : MonoBehaviour
 
     void HandleSteering()
     {
-        // Entrada de direção (Horizontal)
-        float horizontalInput = Input.GetAxis("Horizontal");
+        // float horizontalInput = Input.GetAxis("Horizontal");
 
         // Rotaciona o veículo
         float rotationAmount = -horizontalInput * turnSpeed * Time.fixedDeltaTime;
@@ -106,5 +106,17 @@ public class VehicleController : MonoBehaviour
             turnSpeed = 100f;
             driftFactor = 0.98f;
         }
+    }
+
+    public void ApplyHorizontalInput(float value)
+    {
+        float inputPower = value > 1 ? 1f : value < -1 ? -1 : value;
+        horizontalInput = inputPower;
+    }
+
+    public void ApplyVerticalInput(float value)
+    {
+        float inputPower = value > 1 ? 1f : value < -1 ? -1 : value;
+        verticalInput = inputPower;
     }
 }

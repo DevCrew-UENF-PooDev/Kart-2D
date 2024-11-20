@@ -1,0 +1,65 @@
+{
+    "F1FullT1": {
+        "checkpoints": [
+            {
+                "steps": 12499969,
+                "file_path": "results\\ppo\\F1FullT1\\F1FullT1-12499969.onnx",
+                "reward": 206.340549548467,
+                "creation_time": 1732084966.8266501,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullT1\\F1FullT1-12499969.pt"
+                ]
+            },
+            {
+                "steps": 12999982,
+                "file_path": "results\\ppo\\F1FullT1\\F1FullT1-12999982.onnx",
+                "reward": null,
+                "creation_time": 1732087057.6125116,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullT1\\F1FullT1-12999982.pt"
+                ]
+            },
+            {
+                "steps": 13499972,
+                "file_path": "results\\ppo\\F1FullT1\\F1FullT1-13499972.onnx",
+                "reward": 252.1970017850399,
+                "creation_time": 1732089928.8551745,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullT1\\F1FullT1-13499972.pt"
+                ]
+            },
+            {
+                "steps": 13999962,
+                "file_path": "results\\ppo\\F1FullT1\\F1FullT1-13999962.onnx",
+                "reward": 207.9355085492134,
+                "creation_time": 1732092800.983672,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullT1\\F1FullT1-13999962.pt"
+                ]
+            },
+            {
+                "steps": 14118476,
+                "file_path": "results\\ppo\\F1FullT1\\F1FullT1-14118476.onnx",
+                "reward": 115.32244694748661,
+                "creation_time": 1732093343.3662913,
+                "auxillary_file_paths": [
+                    "results\\ppo\\F1FullT1\\F1FullT1-14118476.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 14118476,
+            "file_path": "results\\ppo\\F1FullT1.onnx",
+            "reward": 115.32244694748661,
+            "creation_time": 1732093343.3662913,
+            "auxillary_file_paths": [
+                "results\\ppo\\F1FullT1\\F1FullT1-14118476.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}
