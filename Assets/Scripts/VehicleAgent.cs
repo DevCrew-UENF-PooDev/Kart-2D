@@ -201,7 +201,7 @@ public class VehicleAgent : Agent
         
         lastPosition = transform.position;
         // Como o input vem entre -1 e 1, para garantir que só acelera ou "freie"
-        float verticalInputD = (actions.ContinuousActions[0] + 1) / 2f;
+        float verticalInputD = actions.ContinuousActions[0];//a(actions.ContinuousActions[0] + 1) / 2f;
         vehicleController.ApplyVerticalInput(verticalInputD);
         vehicleController.ApplyHorizontalInput(actions.ContinuousActions[1]);
     }
